@@ -8,7 +8,10 @@ const pool = new Pool({
     password: process.env.DB_PASSWORD,
     ssl: {
         rejectUnauthorized: false
-    }
+    },
+    connectionTimeoutMillis: 10000,
+    query_timeout: 30000,
+    family: 4
 });
 
 pool.on('connect', () => {
