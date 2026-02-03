@@ -41,6 +41,7 @@ CREATE TABLE sessions (
     course_id INTEGER NOT NULL,
     session_date DATE NOT NULL,
     session_time TIME NOT NULL,
+    duration_minutes INTEGER,
     qr_code TEXT,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     FOREIGN KEY (course_id) REFERENCES courses(id) ON DELETE CASCADE
